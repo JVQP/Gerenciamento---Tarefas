@@ -47,3 +47,18 @@ nav{
 
 height: 100px;
 }
+/* ESTLIZANDO CADASTRO DE USUÁRIO */
+
+.formulario_usuario{
+    width: 1000px;
+    margin-top: 169px;
+    margin-left: 200px;
+    color: black;
+    background-color: #ffffffcc;
+    
+   
+}
+
+.formulario_usuario, button{
+    padding: 20px;
+}
