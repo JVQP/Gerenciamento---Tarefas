@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 
 ///////// CONEXÃO COM O BANCO DE DADOS /////////////
 
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
     host: 'localhost',
     user: 'Admin',
     password: 'jv020904',
@@ -14,13 +14,13 @@ const db = mysql.createConnection({
 })
 
 
-db.connect((err) => {
+/*db.connect((err) => {
 
     if(err) throw err
 
     console.log("Conexão com banco concedida!")
 
-})
+})*/
 
 
 
