@@ -60,6 +60,9 @@ app.get('/views/pagina_usuario', function(req, res) {
 
 app.post("/principal", function(req, res){
 
+console.log(req.body.input_usuario)
+console.log(req.body.input_senha)
+
 var query = `SELECT * FROM usuarios`;
 
 db.query(query, (err, retorno) => {
@@ -91,36 +94,31 @@ db.query(query, (err, retorno) => {
 // ------------------------------------------------------ {
 
 app.post('/usuario', function(req, res){
-   
-   const nome = req.body.inputNome;
-   const sobrenome = req.body.inputSobrenome;
-   const email = req.body.inputEmail4;
-   const usuario = req.body.inputUsuario;
-   const cpf = req.body.inputCPF;
-   const rg = req.body.inputRG; 
-   const senha = req.body.inputSenha;
-   const confirmar = req.body.inputConfirmar;
-   const endereco = req.body.inputEndereco;
-   const cidade = req.body.inputCidade;
-   const estado = req.body.inputEstado;
-   const cep = req.body.inputCEP;
-   
-   const query = `INSERT INTO usuarios 
+    
+var valores = ({
+    nome: req.body.nome,
+    sobrenome: req.body.sobrenome,
+    usuario: req.body.usuario,
+    email: req.body.email,
+    cpf: req.body.cpf,
+    rg: req.body.rg,
+    enderoco: req.body.endereco,
+    cidade: req.body.cidade,
+    estado: req.body.estado,
+    senha: req.body.senha,
+    confirmar_senha: req.body.confirmar_senha,
+    cep: req.body.cep
+})
+
+
+console.log(valores)
+
+res.redirect('/views/pagina_usuario')
+
+    const query = `INSERT INTO usuarios 
    (nome, sobrenome, usuario, email, cpf, rg, endereco, cidade, estado, senha, senha_confirmar, cep)
    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
    
- console.log(nome) 
-console.log(sobrenome)
-console.log(email)
-console.log(usuario)
-console.log(rg)
-console.log(cpf)
-console.log(senha)
-console.log(confirmar)
-console.log(endereco)
-console.log(cidade)
-console.log(estado)
-console.log(cep)
 
 
 })
