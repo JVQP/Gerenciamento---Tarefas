@@ -52,7 +52,7 @@ height: 100px;
 .formulario_usuario{
     width: 1000px;
     margin-top: 169px;
-    margin-left: 200px;
+    margin-left: 220px;
     color: black;
     background-color: #ffffffcc;
     
@@ -62,3 +62,43 @@ height: 100px;
 .formulario_usuario, button{
     padding: 20px;
 }
+
+/* ESTILIZANDO PAGINA DE REGISTRO DE TAREFAS*/
+
+.formulario_tarefas{
+    width: 1000px;
+    margin-top: 169px;
+    margin-left: 220px;
+    color: black;
+    background-color: #ffffffcc;
+}
+
+
+.formulario_tarefas, button{
+    padding: 20px;
+}
+
+
+/* ESTLIZAR VISUALIZAÇÃO DE TAREFAS PÁGINA PRINCIPAL  */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .tabela{
+    background-color: white;
+    height: 300px;
+    width: 600px;
+  }

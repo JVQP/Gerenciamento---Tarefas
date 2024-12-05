@@ -56,6 +56,10 @@ app.get('/views/pagina_usuario', function(req, res) {
     res.render('usuario')
 })
 
+app.get('/views/pagina_tarefas', function(req, res){
+    res.render('tarefas')
+})
+
 ////// ROTA LOGIN /////
 
 app.post("/principal", function(req, res){
@@ -63,7 +67,17 @@ app.post("/principal", function(req, res){
 console.log(req.body.input_usuario)
 console.log(req.body.input_senha)
 
-var query = `SELECT * FROM usuarios`;
+if(req.body.input_usuario == "Admin" && req.body.input_senha == "020904"){
+    console.log('Bem vindo! ' + ' João Vitor')
+    res.render('principal');
+} 
+
+    else {
+        console.log("Usuário ou senha inválidos!") 
+        res.render('login')
+    }
+
+/*var query = `SELECT * FROM usuarios`;
 
 db.query(query, (err, retorno) => {
     if(err) throw err;
@@ -84,7 +98,7 @@ db.query(query, (err, retorno) => {
         }
 
     }
-})
+})*/
 
 
 })
@@ -122,6 +136,33 @@ res.redirect('/views/pagina_usuario')
 
 
 })
+
+
+/* ROTA PARA REGISTRAR TAREFAS */ 
+
+//----------------------------------------------------- {
+
+app.post('/tarefa', function(req, res){
+
+const tarefas = ({
+descricao: req.body.descricao,
+data: req.body.data,
+situacao: req.body.situacao,
+usuario: req.body.usuario
+    
+})
+
+console.log(tarefas)
+
+
+res.redirect('/views/pagina_tarefas')
+
+})
+
+
+//--------------------------------------------------------}
+
+
 
 //--------------------------------------------------------}
 
